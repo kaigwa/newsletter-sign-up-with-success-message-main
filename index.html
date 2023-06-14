@@ -10,8 +10,6 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-
-
   <!-- Sign-up form start -->
 <div class="container">
   <h2>Stay updated!</h2>
@@ -23,14 +21,14 @@
     <li> Measuring to ensure updates are a success</li>
     <li>And much more!</li>
   </ul>
+
   
- 
-  
-  <form novalidate>
+  <form>
     <label for="mail">
       <span>Email address</span>
-      <input type="email" id="mail" name="mail" placeholder="email@company.com" required>
-      <span class="error active" aria-live="polite"></span>
+      <span id="invalid" class="invalid" aria-live="polite">Valid email required.</span>
+      <input type="email" id="mail" name="mail" placeholder="email@company.com">
+   
     </label>
     <button id="btn" type="submit">Subscribe to monthly newsletter</button>
   </form>
@@ -38,18 +36,18 @@
   <!-- Sign-up form end -->
 </div>
 
-  <div class="success hidden">
+  <div class="success">
 
-  <!-- Success message start -->
-  
-    <h2>Thanks for subscribing!</h2>
+    <!-- Success message start -->
+    
+      <h2>Thanks for subscribing!</h2>
 
-    <p>A confirmation email has been sent to <span id="user">x</span>. 
-      Please open it and click the button inside to confirm your subscription.</p>
-  
-    <button id="dismiss">Dismiss message</button>
+      <p>A confirmation email has been sent to <span id="user">x</span>. 
+        Please open it and click the button inside to confirm your subscription.</p>
+    
+      <button id="dismiss">Dismiss message</button>
 
-  <!-- Success message end -->
+    <!-- Success message end -->
   </div>
  
   
@@ -66,3 +64,6 @@ start at 12:00pm to 8:00pm
 hml under 1hrs
 css under 2hrs
 js under 5hrs:-red color alert on non-valid email;   -->
+
+
+<!-- -->

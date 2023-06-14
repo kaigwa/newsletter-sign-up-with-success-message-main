@@ -1,47 +1,47 @@
-const form = document.querySelector('form');
-const email = document.getElementById('mail');
-const errorMessage = document.querySelector('#mail + span.error');
-const submit = document.getElementById('btn');
-const successContainer = document.querySelector('.success');
+//displayed container(main) & hidden container(success)
 const mainContainer = document.querySelector('.container');
+const successContainer = document.querySelector('.success');
+
+// form / email input / alert for invalid email
+// const form = document.querySelector('form');
+const emailInput = document.getElementById('mail');
+const invalidEmail = document.getElementById('invalid');
+
+// user email display span / submiBtn / dismissBtn
+const users = document.getElementById('user');
+const submit = document.getElementById('btn');
+const dismissBtn = document.getElementById('dismiss');
 
 
-email.addEventListener('input', () => {
-    if (email.validity.valid) {
-        errorMessage.textContent = '';
-        errorMessage.className = 'error';
+function success(){
+    successContainer.classList.add('active');
+    mainContainer.classList.add('success');
+}
+
+function validateEmail(email){
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+    return emailRegex.test(email)
+}
+
+submit.addEventListener('click', (e) =>{
+    e.preventDefault();
+    const email = emailInput.value.trim();
+
+    if (validateEmail(email)) {
+        success()
+        users.innerHTML = email
+        emailInput.value = ''
+
+        invalidEmail.classList.remove('active')
+        emailInput.classList.remove('active')
     }else{
-        // showError();
+        invalidEmail.classList.add('active')
+        emailInput.classList.add('active')
     }
 })
 
-
-form.addEventListener("submit", (e) => {
-    if (!email.validity.valid) {
-        showError();
-        e.preventDefault();
-    }
-});
-
-
-function showError(){
-    if (email.validity.valueMissing) {
-        // If the field is empty,
-        // display the following error message.
-        errorMessage.textContent = "Please! Enter email address.";
-      } else if (email.validity.typeMismatch) {
-        // If the field doesn't contain an email address,
-        // display the following error message.
-        errorMessage.textContent = "Valid email required.";
-      }
-    //   emailError.className = "error active";
-}  
-
-
-
-// // call on submit button and manipuration of container pages
-// submit.addEventListener('click', () => {
-//     successContainer.classList.remove('hidden')
-//     mainContainer.style.display = 'none';
-// }); 
-  
+dismissBtn.addEventListener('click', () => {
+    mainContainer.classList.remove('success');
+    successContainer.classList.remove('active');
+    
+})

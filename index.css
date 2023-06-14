@@ -4,9 +4,33 @@
     box-sizing: border-box;
 }
 
-/* Success message style  */
-.hidden{
+/* importation of instructed font style */
+@import url('https://fonts.google.com/specimen/Roboto');
+
+/* mobile-boby section */
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.invalid{
     display: none;
+}
+
+form label .invalid.active{
+    display: block;
+}
+
+/* Success message style  */
+.success{
+    display: none;
+}
+
+/* .container.active{
+    display: block;
+} */
+
+.success.active {
+    display: block;
 }
 
 .attribution { font-size: 11px; text-align: center; }
