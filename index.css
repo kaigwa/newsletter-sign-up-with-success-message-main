@@ -1,3 +1,15 @@
+/*
+- Dark Slate Grey: hsl(234, 29%, 20%)
+- Charcoal Grey: hsl(235, 18%, 26%)
+- Grey: hsl(231, 7%, 60%)
+- White: hsl(0, 0%, 100%) 
+- Tomato: hsl(4, 100%, 67%)
+
+- Font size (paragraph): 16px
+
+- Weights: 400, 700
+*/
+
 *{
     padding: 0;
     margin: 0;
@@ -9,7 +21,71 @@
 
 /* mobile-boby section */
 body{
+    /* margin: auto 10px; */
+    background-color: black;
     font-family: 'Roboto', sans-serif;
+    padding: 20px 0;
+}
+
+.container{
+    width: 375px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-content: center; */
+    /* text-align: center; */
+    background-color: hsl(0, 0%, 100%);
+}
+
+.word{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+/* form{
+    background-color: brown;
+} */
+
+#btn{
+    background-color: hsl(234, 29%, 20%);
+    color: hsl(0, 0%, 100%);
+    font-weight: 400;
+    /* margin-left: 20%; */
+    width: 335px;
+    /* height: 60px; */
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* text-align: center; */
+    border: none;
+    border-radius:6px;
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+    /* text-align: center; */
+}
+
+/* #btn, label{
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+} */
+
+ul>li{
+    list-style: none;
+}
+
+.address{
+    font-weight: 700;
 }
 
 .invalid{
@@ -18,20 +94,82 @@ body{
 
 form label .invalid.active{
     display: block;
+    color: hsl(4, 100%, 67%);
+    font-weight: 700;
 }
+
+input{
+    /* width: 250px; */
+    height: 40px;
+    border-radius: 6px;
+    background-color: transparent;
+    border: 1px solid hsl(231, 7%, 60%);
+    position: relative;
+    bottom: 16%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-left: 15px;
+  }
+  
+  /* input[type='email']{
+    border: none;
+    height: 40px;
+    width: 172px;
+    background-color: transparent;
+    color: hsl(0, 36%, 70%);
+  } */
+  
+  /* input[type='email']::after{
+    border: none;
+  } */
+
 
 /* Success message style  */
 .success{
     display: none;
+    width: 375px;
+    height: 100%;
 }
-
-/* .container.active{
-    display: block;
-} */
 
 .success.active {
     display: block;
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.success> h2, p{
+    background-color: hsl(0, 0%, 100%);
+}
+
+#dismiss{
+    background-color: hsl(234, 29%, 20%);
+    color: hsl(0, 0%, 100%);
+    font-weight: 400;
+    /* margin-left: 20%; */
+    width: 335px;
+    /* height: 60px; */
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* text-align: center; */
+    border: none;
+    border-radius:6px;
+}
+
+#user{
+    font-weight: 700;
+}
+
+.attribution { 
+    color: hsl(0, 0%, 100%);
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color:hsl(0, 50%, 92%);
+    text-decoration: none;
+    font-size: 13px;
+}
